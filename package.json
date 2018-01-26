@@ -1,0 +1,23 @@
+{
+  "name": "bamazoncli",
+  "version": "1.0.0",
+  "description": "online store",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stefanyds85/Bamazon-CLI.git"
+  },
+  "author": "Stefany Dos Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stefanyds85/Bamazon-CLI/issues"
+  },
+  "homepage": "https://github.com/Stefanyds85/Bamazon-CLI#readme",
+  "dependencies": {
+    "inquirer": "^5.0.1",
+    "mysql": "^2.15.0"
+  }
+}
