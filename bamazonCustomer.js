@@ -31,11 +31,22 @@ function listSaleItems() {
         name: "item_id",
         type: "input",
         message:"\nWhat is the ID number of the product you would like to buy?"
-      }).then(function (result) {
-        console.log("result:", result.item_id);
       })
 
-  })
-};
+      .then(function (answer) {
+        var query = "SELECT item_id, FROM products WHERE ?";
+        connection.query(query, { item_id: answer.item_id }, function(err, result) {
+          for (var i = 0; i < result.length; i++) {
+        console.log("item_id:", result[i].item_id + "|| product_name" + result[i].product_name);
+          }
+          listSaleItems();
+        })
+      })
+
+    }
+  )};
+    
+
+ 
 
   
