@@ -30,23 +30,32 @@ function listSaleItems() {
       .prompt({
         name: "item_id",
         type: "input",
-        message:"\nWhat is the ID number of the product you would like to buy?"
-      })
-
-      .then(function (answer) {
-        var query = "SELECT item_id, FROM products WHERE ?";
-        connection.query(query, { item_id: answer.item_id }, function(err, result) {
-          for (var i = 0; i < result.length; i++) {
-        console.log("item_id:", result[i].item_id + "|| product_name" + result[i].product_name);
+        message: "\nWhat is the ID number of the product you would like to buy?",
+        // trying to push the information to the database.
+        options: function () {
+          var shopItem = [];
+          for (var i = 0; i < results.length; i++) {
+            shopItem.push(results[i].item_name);
+            console.log("item available");
           }
-          listSaleItems();
-        })
-      })
+          return shopItem;
+          console.log("item available");
+        },
+    });
+  })
+};
 
-    }
-  )};
-    
+// PSEUDO CODE-- CHALLEGE #1: CUSTOMER VIEW
 
- 
+// once the user selected the desired item by ID, create a
+// function that would log the input.
 
-  
+// Ask user how many of the selected item do they wish to purchase?
+// create a funtion that would verify if quantity of of items selected 
+// are still available. 
+
+// using if and else statement, console log results if items available 
+// to confirm the purchase. 
+// list total sales price.
+// console log if items selected are not available. then prompt user to 
+// select a different item.
